@@ -1,0 +1,48 @@
+{
+  "name": "@rocketseat/adonis-timezone",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "posttest": "npm run coverage",
+    "test:local": "node japaFile.js",
+    "test": "nyc npm run test:local",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "nyc": {
+    "exclude": [
+      "**/*.spec.js",
+      "bin"
+    ]
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "@adonisjs/fold": "^4.0.9",
+    "coveralls": "^3.0.6",
+    "eslint": "^6.3.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "japa": "^3.0.1",
+    "nyc": "^14.1.1"
+  },
+  "keywords": [
+    "timezone",
+    "adonis",
+    "adonisjs",
+    "adonis-js",
+    "adonis-timezone"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rocketseat/adonis-timezone.git"
+  },
+  "dependencies": {
+    "date-fns": "^2.1.0",
+    "date-fns-tz": "^1.0.7"
+  }
+}
