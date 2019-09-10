@@ -2,6 +2,8 @@
 
 This library provides an easy way to start using timezones with AdonisJS.
 
+[![Coverage Status](https://coveralls.io/repos/github/Rocketseat/adonis-timezone/badge.svg?branch=master)](https://coveralls.io/github/Rocketseat/adonis-timezone?branch=master)
+
 ## Install
 
 `adonis install @rocketseat/adonis-timezone`
