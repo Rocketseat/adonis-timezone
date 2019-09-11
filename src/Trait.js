@@ -11,6 +11,10 @@ class Trait {
     function timezoneFormat (value, format = DATE_FORMAT) {
       const timeZone = Timezone.timezone()
 
+      if (!timeZone) {
+        return moment(value).format(format)
+      }
+
       const datetime = moment(value).tz(timeZone).format(format)
 
       return datetime
