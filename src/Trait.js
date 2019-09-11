@@ -20,7 +20,9 @@ class Trait {
       return datetime
     }
 
-    Object.defineProperties(Object.getPrototypeOf(Model), {
+    const clone = Object.assign(Object.create(Object.getPrototypeOf(Model)), Model)
+
+    Object.defineProperties(clone, {
       castDates: {
         value: function (key, value) {
           return timezoneFormat(value)
@@ -30,6 +32,8 @@ class Trait {
         value: timezoneFormat
       }
     })
+
+    Object.setPrototypeOf(Model, clone)
   }
 }
 
