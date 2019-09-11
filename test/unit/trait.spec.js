@@ -53,8 +53,12 @@ test.group('Trait', (group) => {
   })
 
   test('make sure that only the registered model has had its methods override', (assert) => {
-    assert.plan(2)
+    assert.plan(3)
     class Model {
+      static findBy () {
+        assert.isOk(true)
+      }
+
       static castDates (field, value) {
         throw new Error()
       }
@@ -62,13 +66,16 @@ test.group('Trait', (group) => {
 
     class User extends Model {
       static castDates (field, value) {
-        return super.castDates(field, value)
+        // This will never be called
+        throw new Error()
       }
     }
 
     class Token extends Model {}
 
     trait.register(User)
+
+    User.findBy()
 
     const date = moment('2018-09-01 16:01:36')
 

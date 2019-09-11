@@ -22,6 +22,10 @@ class User extends Model {
 }
 ```
 
+```
+OBS: Unfortunately cannot overwrite castDates
+```
+
 And you need to create a middleware and inside it, use the `timezone` context variable.
 
 On the timezone variable, you can choose the timezone, that your model will provide the timestamps and custom time & date.
