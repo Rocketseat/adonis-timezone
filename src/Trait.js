@@ -1,5 +1,5 @@
-const date = require('date-fns-tz')
-const DATE_FORMAT = 'yyyy-MM-dd HH:mm:ss'
+const moment = require('moment-timezone')
+const DATE_FORMAT = 'YYYY-MM-DD HH:mm:ss'
 
 class Trait {
   constructor (Timezone) {
@@ -11,11 +11,7 @@ class Trait {
     function timezoneFormat (value, format = DATE_FORMAT) {
       const timeZone = Timezone.timezone()
 
-      const zonedDate = date.utcToZonedTime(value.utc().format(), timeZone)
-
-      const datetime = date.format(zonedDate, format, {
-        timeZone
-      })
+      const datetime = moment(value).tz(timeZone).format(format)
 
       return datetime
     }
