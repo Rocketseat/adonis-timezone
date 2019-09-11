@@ -20,7 +20,7 @@ class Trait {
       return datetime
     }
 
-    const clone = Object.assign(Object.create(Object.getPrototypeOf(Model)), Model)
+    const clone = Object.getPrototypeOf(Model).bind(Model)
 
     Object.defineProperties(clone, {
       castDates: {
