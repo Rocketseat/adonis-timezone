@@ -15,7 +15,7 @@ class Trait {
         return moment(value).format(format)
       }
 
-      const datetime = moment(value).tz(timeZone).format(format)
+      const datetime = moment.tz(value, format, timeZone).format(format)
 
       return datetime
     }
