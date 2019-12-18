@@ -8,6 +8,22 @@ This library provides an easy way to start using timezones with AdonisJS.
 
 `adonis install @rocketseat/adonis-timezone`
 
+### Include adonis-timezone provider into providers list 
+
+Insert provider reference: `@rocketseat/adonis-timezone/providers/TimezoneProvider` into providers list.  
+
+`file path: start/app.js`
+
+
+```js 
+const providers = [   
+  ...    
+  '@rocketseat/adonis-timezone/providers/TimezoneProvider',  
+  
+];
+```
+
+
 ## Use
 
 To use this provider you need to add a `trait` inside your `Model`, like this:
